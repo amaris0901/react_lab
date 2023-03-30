@@ -1,12 +1,14 @@
 import * as React from "react";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { Restore, CalendarMonth, Today } from '@mui/icons-material';
+import RestoreIcon from "@mui/icons-material/Restore";
+import { useNavigate } from "react-router-dom";
 
 export default function BottomNav(){
     const [value, setValue] = React.useState("");
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        navigate('/${newValue}');
     };
 
     return (
